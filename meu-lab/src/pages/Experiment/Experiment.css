@@ -1,0 +1,33 @@
+.Experiment {
+    padding: 2%;
+    height: max-content;
+  }
+  
+  .Experiment-title {
+    color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .Experiment-datas {
+    color: black;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .Experiment-datas-inputs {
+    margin-top: 3%;
+    display: flex;
+  }
+
+  .Experiment-button-satrt {
+    background-color: green;
+  }
+
+  .Experiment-button-stop {
+    color: red;
+    margin: 50px;
+  }

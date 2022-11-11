@@ -1,0 +1,20 @@
+.Header {
+    background-color: whitesmoke;
+}
+
+.Header-menu {
+    text-align: center;
+    background-color: royalblue;
+    display: flex;
+    flex-direction: row;
+    -ms-flex-align: start;
+}
+
+.Header-title {
+    text-align: center;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    -ms-flex-align: start;
+    margin-left: 2%;
+}

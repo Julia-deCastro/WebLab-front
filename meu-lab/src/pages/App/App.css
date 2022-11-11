@@ -1,0 +1,91 @@
+.App {
+  background-color: whitesmoke;
+  padding: 2%;
+}
+
+.App-title {
+  color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.App-grade {
+  color: black;
+  display: flex;
+  flex-direction: row;
+}
+
+.App-description {
+  color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.App-description-title {
+  color: red;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.App-description-box {
+  color: black;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.App-image {
+  display: flex;
+  width: -webkit-fill-available;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-left: 1%;
+}
+
+.App-button {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.App-grade-bottom {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: whitesmoke;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
