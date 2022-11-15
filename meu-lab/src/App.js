@@ -1,13 +1,15 @@
 import React from 'react';
-import Header from './pages/Header/Header';
+import Header from './components/Header/Header';
 import Routes from './routes';
 import './index.css';
+import Footer from './components/Footer/Footer';
 
 function App() {
  return (
     <>
         <Header/>
         <Routes/>
+        <Footer/>
     </>
  );   
 }

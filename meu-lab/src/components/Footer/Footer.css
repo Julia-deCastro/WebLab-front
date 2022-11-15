@@ -1,0 +1,22 @@
+.Footer-menu {
+  text-align: center;
+  background-color: royalblue;
+  display: flex;
+  padding: 1%;
+  flex-direction: row;
+  -ms-flex-align: start;
+}
+
+.Footer-title {
+  text-align: center;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  -ms-flex-align: start;
+  margin-left: 2%;
+}
+
+.Footer-image {
+  display: flex;
+  width: 8%;
+}

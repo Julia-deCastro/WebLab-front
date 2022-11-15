@@ -1,29 +1,29 @@
-.App {
+.Apresentation {
   background-color: whitesmoke;
   padding: 2%;
 }
 
-.App-title {
+.Apresentation-title {
   color: black;
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
 
-.App-grade {
+.Apresentation-grade {
   color: black;
   display: flex;
   flex-direction: row;
 }
 
-.App-description {
+.Apresentation-description {
   color: black;
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
 
-.App-description-title {
+.Apresentation-description-title {
   color: red;
   display: flex;
   flex-direction: row;
@@ -31,7 +31,7 @@
   font-weight: bold;
 }
 
-.App-description-box {
+.Apresentation-description-box {
   color: black;
   display: flex;
   width: 100%;
@@ -39,7 +39,7 @@
   justify-content: flex-start;
 }
 
-.App-image {
+.Apresentation-image {
   display: flex;
   width: -webkit-fill-available;
   flex-direction: column;
@@ -47,13 +47,13 @@
   margin-left: 1%;
 }
 
-.App-button {
+.Apresentation-button {
   display: flex;
   align-content: center;
   justify-content: center;
 }
 
-.App-grade-bottom {
+.Apresentation-grade-bottom {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -61,13 +61,7 @@
   margin-top: 5%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
+.Apresentation-header {
   background-color: whitesmoke;
   min-height: 100vh;
   display: flex;
@@ -77,15 +71,7 @@
   color: white;
 }
 
-.App-link {
+.Apresentation-link {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
