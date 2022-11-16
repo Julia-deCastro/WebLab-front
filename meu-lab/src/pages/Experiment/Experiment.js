@@ -6,6 +6,7 @@ import { UserData } from '../../utils/Datas'
 import { useState } from 'react';
 
 function Experiment() {
+
     const [userData, setUserData] = useState({
         labels: UserData.map((data) => data.year),
         datasets: [{
@@ -15,6 +16,7 @@ function Experiment() {
             borderColor: "balck"
         }]
     })
+
     return (
         <div className="Experiment">
             <h1 className='Experiment-title'>
@@ -26,7 +28,7 @@ function Experiment() {
                         id="outlined-number"
                         label="Valor X min"
                         type="number"
-                        helperText="(Máximo aceitavel 5V)"
+                        helperText="(Máximo aceitável 5V)"
                         InputLabelProps={{
                             shrink: true,
                         }} />
@@ -36,7 +38,7 @@ function Experiment() {
                         id="outlined-number"
                         label="Valor X max"
                         type="number"
-                        helperText="(Máximo aceitavel 10V)"
+                        helperText="(Máximo aceitável 10V)"
                         InputLabelProps={{
                             shrink: true,
                         }} />
@@ -46,7 +48,7 @@ function Experiment() {
                         id="outlined-number"
                         label="Taxa de medição"
                         type="number"
-                        helperText="(Máximo aceitavel 100/s)"
+                        helperText="(Máximo aceitável 100/s)"
                         InputLabelProps={{
                             shrink: true,
                         }} />
@@ -56,7 +58,7 @@ function Experiment() {
                         id="outlined-number"
                         label="Valor Constante"
                         type="number"
-                        helperText="(Máximo aceitavel x)"
+                        helperText="(Máximo aceitável x)"
                         InputLabelProps={{
                             shrink: true,
                         }} />
