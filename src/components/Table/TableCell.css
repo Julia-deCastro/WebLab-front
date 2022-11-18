@@ -1,0 +1,19 @@
+.TableCell-line {
+  width: 50%;
+  display: flex;
+  justify-content: space-evenly;
+  color: black;
+  font-size: 12pt;
+  font-family: Arial, Helvetica, sans-serif;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+  margin: 0;
+  padding: 2px;
+}
+
+.TableCell {
+  display: flex;
+  align-items: center;
+}
+

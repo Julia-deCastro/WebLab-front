@@ -52,3 +52,30 @@
     flex-direction: row;
     justify-content: space-around;
   }
+
+  .Experiment-table-indices {
+    display: flex;
+    width: 50%;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-content: flex-start;
+    font-size: 12pt;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 1px solid black;
+    padding: 2px;
+    font-weight: bold;
+  }
+
+  .Experiment-table {
+    display: flex;
+    margin-top: 3%;
+    width: 50%;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+  }
+
+  .Experiment-table-title {
+    display: flex;
+    flex-direction: row;
+  }
