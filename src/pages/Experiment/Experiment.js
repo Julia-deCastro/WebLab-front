@@ -2,12 +2,12 @@ import './Experiment.css';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import LineChart from '../../components/LineChart';
-import { UserData } from '../../utils/Datas'
+// import { UserData } from '../../utils/Datas'
 import { useEffect, useState } from 'react';
 import TableCell from '../../components/Table/TableCell';
 import io from 'socket.io-client';
 
-const socket = io('http://localhost:8080')
+const socket = io('192.168.137.89:80')
 socket.on('connect', () => console.log('[IO] Connect => A new connection has been established'));
 
 function Experiment() {
@@ -17,17 +17,29 @@ function Experiment() {
     const [taxa, setTaxa] = useState('');
     const [constante, setConstante] = useState('');
     const [start, setStart] = useState(false);
-
-
-    const [userData, setUserData] = useState({
-        labels: UserData.map((data) => data.y),
+    const [serverDatas, setServerDatas] = useState([]);
+    const [chartDatas, setChartDatas] = useState({
+        labels: serverDatas.map((data) => data.y),
         datasets: [{
             label: "Corrente x Tensão",
-            data: UserData.map((data) => data.x),
+            data: serverDatas.map((data) => data.x),
             backgroundColor: "black",
             borderColor: "balck"
         }]
     });
+
+    useEffect(() => {
+        const userData = {
+            labels: serverDatas.map((data) => data.y),
+            datasets: [{
+                label: "Corrente x Tensão",
+                data: serverDatas.map((data) => data.x),
+                backgroundColor: "black",
+                borderColor: "balck"
+            }]
+        };
+        setChartDatas(userData);
+    }, [serverDatas]);
 
     const ExperimentsData = [
         {
@@ -40,11 +52,27 @@ function Experiment() {
         }
     ]
     let datasJSON = JSON.stringify(ExperimentsData);
-    console.log(datasJSON);
+
+    const teste =
+    {
+        id: "1",
+        x: "30",
+        y: "50"
+    }
+
+    function handleTest() {
+        socket.emit('response', teste)
+    }
 
     useEffect(() => {
         socket.emit('message', datasJSON)
     }, [datasJSON])
+
+    useEffect(() => {
+        const handleNewDatas = newDatas =>
+            setServerDatas([...serverDatas, newDatas]);
+        socket.on('response', handleNewDatas)
+    }, [serverDatas]);
 
     return (
         <div className="Experiment">
@@ -104,6 +132,9 @@ function Experiment() {
                 <Button onClick={() => setStart(false)} className="Experiment-button-stop" variant="contained" color="error">
                     Stop
                 </Button>
+                <Button onClick={() => handleTest()} className="Experiment-button-stop" variant="contained">
+                    Test
+                </Button>
             </div>
             <div className="Experiment-visual-datas">
                 <div className="Experiment-video">
@@ -118,7 +149,7 @@ function Experiment() {
                         allowfullscreen="true">
                     </iframe>
                     <div className="Experiment-chart">
-                        <LineChart chartData={userData} />
+                        <LineChart chartData={chartDatas} />
                     </div>
                 </div>
             </div>
@@ -131,7 +162,7 @@ function Experiment() {
                         <p>X</p>
                     </div>
                 </div>
-                {UserData.map((element) => {
+                {serverDatas.map((element) => {
                     return (
                         <TableCell data={element} />
                     )
