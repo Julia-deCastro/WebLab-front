@@ -2,16 +2,17 @@ import './Experiment.css';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import LineChart from '../../components/LineChart';
-// import { UserData } from '../../utils/Datas'
 import { useEffect, useState } from 'react';
 import TableCell from '../../components/Table/TableCell';
 import io from 'socket.io-client';
 
-const socket = io('192.168.137.89:80')
-socket.on('connect', () => console.log('[IO] Connect => A new connection has been established'));
+const socket = io('http://localhost:8080');
 
 function Experiment() {
-
+    
+    socket.on('connect', () =>
+        console.log('[IO] Connect => A new connection has been established'),
+    );
     const [xMax, setXMax] = useState('');
     const [xMin, setXMin] = useState('');
     const [taxa, setTaxa] = useState('');
@@ -59,14 +60,14 @@ function Experiment() {
         x: "30",
         y: "50"
     }
-
+    let teste1 = JSON.stringify(teste);
     function handleTest() {
-        socket.emit('response', teste)
+        socket.emit('message', teste1)
     }
 
-    useEffect(() => {
-        socket.emit('message', datasJSON)
-    }, [datasJSON])
+    // useEffect(() => {
+    //     socket.emit('message', datasJSON)
+    // }, [datasJSON])
 
     useEffect(() => {
         const handleNewDatas = newDatas =>

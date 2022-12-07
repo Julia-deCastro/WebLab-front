@@ -10,13 +10,13 @@ function Apresentation() {
         </h1>
         <div className="Apresentation-grade">
           <div className="Apresentation-description-box">
-            <a className="Apresentation-description-title">
+            <p className="Apresentation-description-title">
               Descrição
-            </a>
-            <a className="Apresentation-description">
+            </p>
+            <p className="Apresentation-description">
               A lei de Ohm afirma que a resistência elétrica é determinada pela razão entre o potencial elétrico e a corrente elétrica.
               "As leis de Ohm permitem calcularmos importantes grandezas físicas, como a tensão, corrente e a resistência elétrica dos mais diversos elementos presentes em um circuito. No entanto, essas leis só podem ser aplicadas a resistências ôhmicas, isto é, corpos cujas resistências tenham módulo constante."
-            </a>
+            </p>
           </div>
           <img className="Apresentation-image" src="test.png" alt="Circuito-resistivo"></img>
         </div>
