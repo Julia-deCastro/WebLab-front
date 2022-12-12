@@ -9,10 +9,11 @@ import io from 'socket.io-client';
 const socket = io('http://localhost:8080');
 
 function Experiment() {
-    
+
     socket.on('connect', () =>
         console.log('[IO] Connect => A new connection has been established'),
     );
+
     const [xMax, setXMax] = useState('');
     const [xMin, setXMin] = useState('');
     const [taxa, setTaxa] = useState('');
@@ -31,10 +32,10 @@ function Experiment() {
 
     useEffect(() => {
         const userData = {
-            labels: serverDatas.map((data) => data.y),
+            labels: serverDatas.map((data) => '1'),
             datasets: [{
                 label: "Corrente x Tensão",
-                data: serverDatas.map((data) => data.x),
+                data: serverDatas.map((data) => data),
                 backgroundColor: "black",
                 borderColor: "balck"
             }]
@@ -65,15 +66,16 @@ function Experiment() {
         socket.emit('message', teste1)
     }
 
-    // useEffect(() => {
-    //     socket.emit('message', datasJSON)
-    // }, [datasJSON])
-
     useEffect(() => {
-        const handleNewDatas = newDatas =>
-            setServerDatas([...serverDatas, newDatas]);
-        socket.on('response', handleNewDatas)
-    }, [serverDatas]);
+        const handleNewDatas = newdatas => {
+            if (newdatas !== "\r\n" && newdatas !== "unk" && newdatas !== "\r\n1\r\n")
+                setServerDatas((serverDatas) => [...serverDatas, newdatas])
+        }
+        socket?.on('response', handleNewDatas)
+        return () => socket?.off('response', handleNewDatas)
+    }, []);
+
+    console.log(serverDatas);
 
     return (
         <div className="Experiment">
