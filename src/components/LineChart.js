@@ -4,7 +4,15 @@ import { Line } from "react-chartjs-2";
 import { Chart as ChartJS } from "chart.js/auto";
 
 const options = {
-  responsive: true
+  responsive: true,
+  pointRadius: 2.3,
+  indexAxis: 'x',
+  scales: {
+    x: {
+      beginAtZero: true,
+      stacked: true
+    }
+  }
 }
 
 function LineChart({ chartData }) {

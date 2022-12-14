@@ -1,5 +1,16 @@
+:root {
+  --branco: #FFFFFF;
+  --cinzaClaro: #F5F5F5;
+  --laranjaClaro: #FDB813;
+  --azulClaro: #4EB1DA;
+  --cinzaEscuro: #627781;
+  --azulAcinzentado: #1F3748;
+  --azulEscuro: #162632;
+  --preto: #000000;
+}
+
 .Apresentation {
-  background-color: whitesmoke;
+  background-color: var(--branco);
   padding: 2%;
 }
 
@@ -62,7 +73,7 @@
 }
 
 .Apresentation-header {
-  background-color: whitesmoke;
+  background-color: var(--branco);
   min-height: 100vh;
   display: flex;
   flex-direction: column;

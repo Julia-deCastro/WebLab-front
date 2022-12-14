@@ -1,10 +1,79 @@
+:root {
+  --branco: #FFFFFF;
+  --cinzaClaro: #F5F5F5;
+  --laranjaClaro: #FDB813;
+  --azulClaro: #4EB1DA;
+  --cinzaEscuro: #627781;
+  --azulAcinzentado: #1F3748;
+  --azulEscuro: #162632;
+  --preto: #000000;
+}
+
+.Footer {
+  background-color: var(--azulAcinzentado);
+  color: var(--branco)
+}
+
 .Footer-menu {
   text-align: center;
-  background-color: royalblue;
+  background-color: var(--azulAcinzentado);
   display: flex;
-  padding: 1%;
-  flex-direction: row;
+  flex-direction: column;
+  padding: 2%;
   -ms-flex-align: start;
+}
+
+.Footer-first-line {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.Footer-image {
+  display: flex;
+  width: 105px;
+  height: 40px;
+}
+
+.Footer-eita {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.Fotter-p2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.Fotter-p3 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.Footer-social-medias {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.Footer-icons {
+  margin-top: 4px;
+}
+
+.Footer-bar-outside {
+  display: flex;
+  justify-content: center;
+}
+
+.Footer-bar {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  height: 3px;
+  background: #627781;
+  margin-top: 3%;
 }
 
 .Footer-title {
@@ -16,7 +85,15 @@
   margin-left: 2%;
 }
 
-.Footer-image {
+.Footer-copyright {
   display: flex;
-  width: 8%;
+  flex-direction: row;
+  align-items: center;
+  font-size: 12px;
+  margin-left: 5px;
+}
+
+.Footer-icon-copyright.css-i4bv87-MuiSvgIcon-root {
+  font-size: 17px;
+  margin-right: 0.5em;
 }

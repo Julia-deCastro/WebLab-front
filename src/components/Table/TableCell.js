@@ -5,10 +5,10 @@ function TableCell({ data }) {
   return (
     <div className="TableCell">
       <div className="TableCell-line">
-        <p>{data.x}</p>
+        <p>{data}</p>
       </div>
       <div className="TableCell-line">
-        <p>{data.y}</p>
+        <p>{data}</p>
       </div>
     </div >
   );
