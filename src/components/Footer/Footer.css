@@ -97,3 +97,27 @@
   font-size: 17px;
   margin-right: 0.5em;
 }
+
+@media (max-width: 625px) {
+  .Footer-first-line {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .Footer-eita {
+    font-size: 10px;
+    margin-bottom: 15px;
+  }
+
+  .Footer-second-line {
+    font-size: 12px;
+  }
+
+  .Footer-image {
+    margin-bottom: 15px;
+  }
+
+  .Footer-p2 {
+    margin-bottom: 15px;
+  }
+}

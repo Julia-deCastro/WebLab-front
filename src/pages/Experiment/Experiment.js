@@ -32,7 +32,7 @@ function Experiment() {
 
     useEffect(() => {
         const userData = {
-            labels: serverDatas.map((data) => '1'),
+            labels: serverDatas.map((data) => data),
             datasets: [{
                 label: "Corrente x Tensão",
                 data: serverDatas.map((data) => data),
@@ -43,32 +43,34 @@ function Experiment() {
         setChartDatas(userData);
     }, [serverDatas]);
 
-    const ExperimentsData = [
-        {
-            c: "1",
-            i: start,
-            x1: xMax,
-            x2: xMin,
-            t: taxa,
-            ct: constante,
-        }
-    ]
+    const ExperimentsData =
+    {
+        i: start,
+        x1: xMax,
+        x2: xMin,
+        t: taxa,
+        ct: constante
+    }
     let datasJSON = JSON.stringify(ExperimentsData);
 
-    const teste =
-    {
-        id: "1",
-        x: "30",
-        y: "50"
-    }
-    let teste1 = JSON.stringify(teste);
-    function handleTest() {
-        socket.emit('message', teste1)
-    }
+    // const teste =
+    // {
+    //     id: "1",
+    //     x: "30",
+    //     y: "50"
+    // }
+
+    // async function handleSendDatas() {
+    //     socket.emit('message', datasJSON);
+    // }
+
+    // useEffect(() => {
+    //     socket.emit('message', datasJSON)
+    // }, [datasJSON])
 
     useEffect(() => {
         const handleNewDatas = newdatas => {
-            if (newdatas !== "\r\n" && newdatas !== "unk" && newdatas !== "\r\n1\r\n")
+            if (newdatas !== "\r\n" && newdatas !== "unk" && newdatas !== "\r\n10\r\n")
                 setServerDatas((serverDatas) => [...serverDatas, newdatas])
         }
         socket?.on('response', handleNewDatas)
@@ -135,16 +137,16 @@ function Experiment() {
                 <Button onClick={() => setStart(false)} className="Experiment-button-stop" variant="contained" color="error">
                     Stop
                 </Button>
-                <Button onClick={() => handleTest()} className="Experiment-button-stop" variant="contained">
+                {/* <Button onClick={() => handleTest()} className="Experiment-button-stop" variant="contained">
                     Test
-                </Button>
+                </Button> */}
             </div>
             <div className="Experiment-visual-datas">
                 <div className="Experiment-video">
                     <iframe
                         width="560"
                         height="315"
-                        src="https://www.youtube.com/embed/_rMZt292mJc"
+                        src="https://www.youtube.com/embed/KSjn5RHQ1y8"
                         title="YouTube video player"
                         frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; 
@@ -159,10 +161,10 @@ function Experiment() {
             <div className="Experiment-table">
                 <div className="Experiment-table-title">
                     <div className="Experiment-table-indices">
-                        <p>Y</p>
+                        <p>X</p>
                     </div>
                     <div className="Experiment-table-indices">
-                        <p>X</p>
+                        <p>Y</p>
                     </div>
                 </div>
                 {serverDatas.map((element) => {
